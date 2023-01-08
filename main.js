@@ -1,6 +1,13 @@
-function tocaSomPom () {
-    // anatomia da função: palavraReservada nomeDaFuncao () { comandos }
-    document.querySelector('#som_tecla_pom').play()
-    // document.caminhoAteArquivoDeAudio.funcaoNativaPlay()
+function tocaSom (idElementoAudio) {
+    document.querySelector(idElementoAudio).play()
 }
+
 const listaDeTeclas = document.querySelectorAll('.tecla')
+
+let contador = 0
+
+while (contador < listaDeTeclas.length) {
+    listaDeTeclas[contador].onclick = tocaSom
+    contador = contador + 1
+    console.log(contador)
+}
